@@ -13,13 +13,13 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-    <dependecies>
+    <dependencies>
         <dependency>
             <groupId>com.github.javaparser</groupId>
             <artifactId>javaparser-symbol-solver-core</artifactId>
             <version>3.25.5</version>
         </dependency>
-    </dependecies>
+    </dependencies>
 
     <build>
         <plugins>
