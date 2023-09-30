@@ -14,7 +14,7 @@ public class Parser {
         String nomClasse = "";
 
         // Extract package and class name from the file path
-        String[] pathSegments = cheminFichier.split("/src/test/java/");
+        String[] pathSegments = cheminFichier.split("/src/main/java/");
         if (pathSegments.length == 2) {
             String[] packageAndClass = pathSegments[1].split("/");
             if (packageAndClass.length >= 2) {
