@@ -14,6 +14,12 @@ public class Tloc {
 
         String filePath = args[0];
 
+        int tloc = tloc(filePath);
+        System.out.println(tloc);
+        
+    }
+
+    public static int tloc(String filePath){
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
             String line;
@@ -46,9 +52,11 @@ public class Tloc {
             // System.out.println("Number of empty lines: " + emptyLines);
             // System.out.println("Number of commentary lines: " + commentaryLines);
             
-            System.out.println(totalLines - emptyLines - commentaryLines);
+            return (totalLines - emptyLines - commentaryLines);
+
         } catch (IOException e) {
             e.printStackTrace();
+            return 0;
         }
     }
 }
