@@ -14,7 +14,7 @@ public class Extractor {
         String className = "";
 
         // Calculate tloc
-        int tloc = Tloc.tloc(className);
+        String tloc = String.valueOf(Tloc.tloc(fileName));
 
         // Extract package and class name from the file path
         String[] pathSegments = filePath.split("/src/main/java/");
