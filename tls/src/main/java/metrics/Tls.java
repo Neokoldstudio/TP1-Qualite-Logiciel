@@ -17,19 +17,23 @@ public class Tls {
 
     public static void main(String[] args){
 
+        // Command line option for csv output
         Options options = new Options();
         options.addOption("o", true, "Chemin de sortie du fichier CSV");
 
         CommandLineParser parser = new DefaultParser();
+
         try {
             CommandLine cmd = parser.parse(options, args);
 
             String dossier = cmd.getArgs()[0];
             List<String> lignesCSV = new ArrayList<>();
-            lignesCSV.add("Chemin du fichier,Nom du paquet,Nom de la classe");
+            lignesCSV.add("Chemin du fichier,Nom du paquet,Nom de la classe,Tloc");
 
-            DirScanner.traverseFolder(dossier, lignesCSV);
+            // Populate lignesCSV with the required metrics
+            Scanner.traverseFolder(dossier, lignesCSV);
 
+            // Either display result on the command line or save a csv file. 
             if (cmd.hasOption("o")) {
                 String cheminSortie = cmd.getOptionValue("o");
                 enregistrerDansFichierCSV(cheminSortie, lignesCSV);
