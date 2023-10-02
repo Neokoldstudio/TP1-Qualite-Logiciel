@@ -15,12 +15,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>commons-cli</groupId>
-            <artifactId>commons-cli</artifactId>
-            <version>1.4</version> <!-- Use the version appropriate for your project -->
-        </dependency>
-
-        <dependency>
             <groupId>ca.UdeM.Informatique</groupId>
             <artifactId>tloc</artifactId>
             <version>0.1.0</version> <!-- Use the version appropriate for your project -->
