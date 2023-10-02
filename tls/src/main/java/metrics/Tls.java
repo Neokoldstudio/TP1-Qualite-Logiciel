@@ -6,46 +6,43 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
-
-
 public class Tls {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        // Command line option for csv output
-        Options options = new Options();
-        options.addOption("o", true, "Chemin de sortie du fichier CSV");
+        String outputFilePath = null;
+        List<String> arguments = new ArrayList<>();
 
-        CommandLineParser parser = new DefaultParser();
-
-        try {
-            CommandLine cmd = parser.parse(options, args);
-
-            String dossier = cmd.getArgs()[0];
-            List<String> lignesCSV = new ArrayList<>();
-            lignesCSV.add("Chemin du fichier,Nom du paquet,Nom de la classe,Tloc");
-
-            // Populate lignesCSV with the required metrics
-            Scanner.traverseFolder(dossier, lignesCSV);
-
-            // Either display result on the command line or save a csv file. 
-            if (cmd.hasOption("o")) {
-                String cheminSortie = cmd.getOptionValue("o");
-                enregistrerDansFichierCSV(cheminSortie, lignesCSV);
-                System.out.println("Le fichier CSV a été généré avec succès : " + cheminSortie);
+        // Parse command line arguments manually
+        for (int i = 0; i < args.length; i++) {
+            String arg = args[i];
+            if ("-o".equals(arg) && i < args.length - 1) {
+                outputFilePath = args[i + 1];
+                i++; // Skip the next argument (the output file path)
             } else {
-                afficherSurLaConsole(lignesCSV);
+                arguments.add(arg);
             }
-        } catch (ParseException e) {
-            System.err.println("Erreur lors de l'analyse des arguments de ligne de commande.");
-            e.printStackTrace();
         }
-        
+
+        if (arguments.isEmpty()) {
+            System.err.println("Usage: Tls [-o outputFilePath] folderPath");
+            return;
+        }
+
+        String folderPath = arguments.get(0);
+        List<String> csvLines = new ArrayList<>();
+        csvLines.add("Chemin du fichier,Nom du paquet,Nom de la classe,Tloc");
+
+        // Populate csvLines with the required metrics
+        Scanner.traverseFolder(folderPath, csvLines);
+
+        // Either display the result on the command line or save a CSV file.
+        if (outputFilePath != null) {
+            enregistrerDansFichierCSV(outputFilePath, csvLines);
+            System.out.println("Le fichier CSV a été généré avec succès : " + outputFilePath);
+        } else {
+            afficherSurLaConsole(csvLines);
+        }
     }
 
     private static void enregistrerDansFichierCSV(String cheminSortie, List<String> lignesCSV) {
@@ -61,5 +58,4 @@ public class Tls {
             System.out.println(ligne);
         }
     }
-
 }
