@@ -24,15 +24,14 @@ public class Tassert {
             String line;
 
             // Use regex to find desired patterns
-            Pattern patternAsserts = Pattern.compile("assert?[^\\s()]+\\(.*?\\)");
-            Pattern patternFail = Pattern.compile("fail\\(.*?\\)");
+            Pattern patternAsserts = Pattern.compile("assert?[^\\s()]+\\(.*?\\)|fail\\(.*?\\)");
 
             while ((line = reader.readLine()) != null) {
-                Matcher matcherAsserts = patternAsserts.matcher(line);
-                Matcher matcherFails = patternFail.matcher(line);
+                line = line.split("//")[0];// split a line if a comment is detected, process only the first half
 
-                if (matcherAsserts.find() || matcherFails.find()) {
-                    // System.out.println(line);
+                Matcher matcherAsserts = patternAsserts.matcher(line);
+
+                while (matcherAsserts.find()) {
                     asserts++;
                 }
             }
