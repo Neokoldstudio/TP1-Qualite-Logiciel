@@ -11,3 +11,4 @@ buildNumber.properties
 tloc/quick_test.java
 tassert/quick_test.java
 *.class
+.vscode/
