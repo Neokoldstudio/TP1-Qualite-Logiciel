@@ -31,7 +31,7 @@ public class Tls {
 
         String folderPath = arguments.get(0);
         List<String> csvLines = new ArrayList<>();
-        csvLines.add("Chemin du fichier,Nom du paquet,Nom de la classe,Tloc");
+        csvLines.add("Chemin du fichier, Nom du paquet, Nom de la classe, tloc de la classe, tassert de la classe, tcmp de la classe = tloc / tassert");
 
         // Populate csvLines with the required metrics
         Scanner.traverseFolder(folderPath, csvLines);

@@ -14,7 +14,11 @@ public class Extractor {
         String className = "";
 
         // Calculate tloc
-        String tloc = String.valueOf(Tloc.tloc(fileName));
+        int tloc = Tloc.tloc(fileName);
+
+        // Calculate tassert
+        int tassert = Tassert.countTAsserts(fileName);
+        float tcmp = (float) (tloc / (tassert + 0.0001)); 
 
         // Extract package and class name from the file path
         String[] pathSegments = filePath.split("/src/main/java/");
@@ -26,7 +30,8 @@ public class Extractor {
             }
         }
 
-        csvLines.add(fileName + "," + packageName + "," + className + "," + tloc);
+        csvLines.add(fileName + ", " + packageName + ", " + className + ", " 
+                    + String.valueOf(tloc)+ ", " + String.valueOf(tassert) +", " + String.valueOf(tcmp));
     }
         
 }
