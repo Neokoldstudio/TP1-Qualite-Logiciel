@@ -45,7 +45,7 @@ Si vous souhaitez construire les projets vous-même, vous pouvez utiliser Maven.
 Pour construire le projet Tloc, exécutez la commande suivante:
 
 ```sh
-mvn clean package
+mvn package
 ```
 
 ### Tassert
@@ -68,7 +68,7 @@ mvn install:install-file -Dfile=../jars/tassert.jar -DgroupId=ca.UdeM.Informatiq
 Ensuite, vous pouvez procéder à la construction du projet Tls avec la commande suivante:
 
 ```sh
-mvn clean package
+mvn package
 ```
 
 Dans tous les cas, le fichier .jar résultant sera généré dans le répertoire `target/`.
