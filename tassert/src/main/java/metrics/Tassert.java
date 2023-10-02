@@ -24,7 +24,7 @@ public class Tassert {
             String line;
 
             // Use regex to find desired patterns
-            Pattern patternAsserts = Pattern.compile("assert[^\\s()]+\\(.*?\\)");
+            Pattern patternAsserts = Pattern.compile("assert?[^\\s()]+\\(.*?\\)");
             Pattern patternFail = Pattern.compile("fail\\(.*?\\)");
 
             while ((line = reader.readLine()) != null) {
@@ -32,6 +32,7 @@ public class Tassert {
                 Matcher matcherFails = patternFail.matcher(line);
 
                 if (matcherAsserts.find() || matcherFails.find()) {
+                    // System.out.println(line);
                     asserts++;
                 }
             }
