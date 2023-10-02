@@ -21,13 +21,13 @@ public class Extractor {
         float tcmp = (float) (tloc / (tassert + 0.0001)); 
 
         // Extract package and class name from the file path
-        String[] pathSegments = filePath.split("/src/main/java/");
-        if (pathSegments.length == 2) {
-            String[] packageAndClass = pathSegments[1].split("/");
-            if (packageAndClass.length >= 2) {
-                packageName = String.join(".", Arrays.copyOf(packageAndClass, packageAndClass.length - 1));
-                className = packageAndClass[packageAndClass.length - 1].replaceAll(".java$", "");
-            }
+        String[] pathSegments = filePath.split("/src/test/java/");
+
+        String[] packageAndClass = pathSegments[1].split("/");
+
+        if (packageAndClass.length >= 2) {
+            packageName = String.join(".", Arrays.copyOf(packageAndClass, packageAndClass.length - 1)).replaceAll("[\\s.]+$", "");
+            className = packageAndClass[packageAndClass.length - 1].replaceAll(".java$", "");
         }
 
         csvLines.add(fileName + ", " + packageName + ", " + className + ", " 
