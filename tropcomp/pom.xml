@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ca.UdeM.Informatique</groupId>
-    <artifactId>tloc</artifactId>
+    <artifactId>tropcomp</artifactId>
     <packaging>jar</packaging>
     <version>0.1.0</version>
 
