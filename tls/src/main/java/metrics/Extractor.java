@@ -1,6 +1,7 @@
 package metrics;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,9 +26,22 @@ public class Extractor {
 
         String[] packageAndClass = pathSegments[1].split("/");
 
-        if (packageAndClass.length >= 2) {
-            packageName = String.join(".", Arrays.copyOf(packageAndClass, packageAndClass.length - 1)).replaceAll("[\\s.]+$", "");
-            className = packageAndClass[packageAndClass.length - 1].replaceAll(".java$", "");
+        List<String> filteredList = new ArrayList<>();
+
+        // Iterate through the array and filter out strings
+        for (String str : packageAndClass) {
+            // Check if the string contains a space or any number of dots
+            if (str.contains("java") || !str.contains(" ") && !str.matches(".*\\..*")) {
+                filteredList.add(str);
+            }
+        }
+
+        String[] newPackageAndClass = filteredList.toArray(new String[0]);
+
+        if (newPackageAndClass.length >= 2) {
+
+            packageName = String.join(".", Arrays.copyOf(newPackageAndClass, newPackageAndClass.length - 1));
+            className = newPackageAndClass[newPackageAndClass.length - 1].replaceAll(".java$", "");
         }
 
         csvLines.add(fileName + ", " + packageName + ", " + className + ", " 
