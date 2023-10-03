@@ -44,9 +44,11 @@ public class Tropcomp {
         csvLines.add(
                 "Chemin du fichier, Nom du paquet, Nom de la classe, tloc de la classe, tassert de la classe, tcmp de la classe = tloc / tassert");
 
-        // execute Tls on the project and find the suspect lines, then store them in the
+        // execute Scanner on the project and find the suspect lines, then store them in
+        // the
         // "csvLines" file
-        // Scanner.traverseFolder(folderPath, csvLines); -> pass threshold as argument
+        Analyser.analyseProject(folderPath, threshold, csvLines);
+        // argument
 
         // Either display the result on the command line or save a CSV file.
         if (outputFilePath != null) {
