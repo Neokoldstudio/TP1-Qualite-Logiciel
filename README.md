@@ -42,7 +42,7 @@ Si vous souhaitez construire les projets vous-même, vous pouvez utiliser Maven.
 
 ### Tloc
 
-Pour construire le projet Tloc, exécutez la commande suivante:
+Pour construire le projet Tloc, exécutez la commande suivante, dans la racine du projet tloc:
 
 ```sh
 mvn package
@@ -50,7 +50,7 @@ mvn package
 
 ### Tassert
 
-Pour construire le projet Tassert, exécutez la commande suivante:
+Pour construire le projet Tassert, exécutez la commande suivante, dans la racine du projet tassert:
 
 ```sh
 mvn package
@@ -58,7 +58,7 @@ mvn package
 
 ### Tls
 
-Pour construire le projet Tls, vous devez d'abord installer les dépendances Tloc et Tassert. Utilisez les commandes suivantes:
+Pour construire le projet Tls, vous devez d'abord installer les dépendances Tloc et Tassert. Utilisez les commandes suivantes, dans la racine du projet tls:
 
 ```sh
 mvn install:install-file -Dfile=../jars/tloc.jar -DgroupId=ca.UdeM.Informatique -DartifactId=tloc -Dversion=0.1.0 -Dpackaging=jar
