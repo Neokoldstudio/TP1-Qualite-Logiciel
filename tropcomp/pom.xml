@@ -13,6 +13,15 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>ca.UdeM.Informatique</groupId>
+            <artifactId>tls</artifactId>
+            <version>0.1.0</version> <!-- Use the version appropriate for your project -->
+        </dependency>
+
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
