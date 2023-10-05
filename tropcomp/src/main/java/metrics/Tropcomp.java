@@ -75,6 +75,6 @@ public class Tropcomp {
     }
 
     public static void Usage() {
-        System.err.println("Usage: Tls [-o outputFilePath] folderPath threshold");
+        System.err.println("Usage: Tls [-o outputFilePath] <folderPath> <threshold>");
     }
 }
