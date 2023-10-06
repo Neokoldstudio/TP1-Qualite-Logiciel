@@ -19,10 +19,14 @@ public class Extractor {
 
         // Calculate tassert
         int tassert = Tassert.countTAsserts(fileName);
-        float tcmp = (float) (tloc / (tassert + 0.0001)); 
+
+        if(tassert == 0) return;
+
+        float tcmp = (float) (tloc / tassert); 
 
         // Extract package and class name from the file path
-        String[] pathSegments = filePath.split("/src/test/java/");
+        String[] pathSegments = filePath.split(File.separator + "src" + File.separator + "test" + File.separator + "java" + File.separator);
+
 
         String[] packageAndClass = pathSegments[1].split("/");
 
