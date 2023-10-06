@@ -38,24 +38,24 @@ public class Tls {
 
         // Either display the result on the command line or save a CSV file.
         if (outputFilePath != null) {
-            enregistrerDansFichierCSV(outputFilePath, csvLines);
+            saveCSV(outputFilePath, csvLines);
             System.out.println("Le fichier CSV a été généré avec succès : " + outputFilePath);
         } else {
-            afficherSurLaConsole(csvLines);
+            displayCSV(csvLines);
         }
     }
 
-    private static void enregistrerDansFichierCSV(String cheminSortie, List<String> lignesCSV) {
+    private static void saveCSV(String outputPath, List<String> csvLines) {
         try {
-            Files.write(Paths.get(cheminSortie), lignesCSV);
+            Files.write(Paths.get(outputPath), csvLines);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void afficherSurLaConsole(List<String> lignesCSV) {
-        for (String ligne : lignesCSV) {
-            System.out.println(ligne);
+    private static void displayCSV(List<String> csvLines) {
+        for (String line : csvLines) {
+            System.out.println(line);
         }
     }
 }
