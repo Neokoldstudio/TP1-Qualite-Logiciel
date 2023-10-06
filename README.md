@@ -25,15 +25,6 @@ java -jar jars/tloc.jar <chemin de la classe de test Java>
 
 La réponse sera dans la ligne de commande. 
 
-Si vous souhaitez construire les projets vous-même, vous pouvez utiliser Maven:
-
-```sh
-cd tloc
-mvn package
-```
-
-Le fichier .jar résultant sera dans le dossier `./tloc/target/`
-
 ### Tassert
 Le programme Tassert prend en paramètre de la même manière que Tloc, le chemin d'accès de la classe de test Java à analyser. De manière similaire, elle utilise un objet *BufferedReader* pour examiner le contenu du fichier. Pour repérer les "assertions", nous utilisons des expressions régulières pour identifier les mots qui correspondent au motif 'assert' ou 'fail'. Nous tentons d'ignorer les commentaires en divisant les lignes contenant "//" et en analysant uniquement la première partie de la division. À la fin, nous renvoyons la valeur de *tassert*, qui représente la quantité de motifs regex que nous avons trouvés.
 
