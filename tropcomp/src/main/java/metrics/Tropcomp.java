@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Tropcomp {
 
@@ -52,15 +51,15 @@ public class Tropcomp {
 
         // Either display the result on the command line or save a CSV file.
         if (outputFilePath != null) {
-            enregistrerDansFichierCSV(outputFilePath, csvLines);
+            saveCSV(outputFilePath, csvLines);
             System.out.println("Le fichier CSV a été généré avec succès : " + outputFilePath);
         } else {
-            afficherSurLaConsole(csvLines);
+            displayCSV(csvLines);
         }
 
     }
 
-    private static void enregistrerDansFichierCSV(String cheminSortie, List<String> lignesCSV) {
+    private static void saveCSV(String cheminSortie, List<String> lignesCSV) {
         try {
             Files.write(Paths.get(cheminSortie), lignesCSV);
         } catch (IOException e) {
@@ -68,13 +67,13 @@ public class Tropcomp {
         }
     }
 
-    private static void afficherSurLaConsole(List<String> lignesCSV) {
+    private static void displayCSV(List<String> lignesCSV) {
         for (String ligne : lignesCSV) {
             System.out.println(ligne);
         }
     }
 
     public static void Usage() {
-        System.err.println("Usage: Tls [-o outputFilePath] <folderPath> <threshold>");
+        System.err.println("Usage: Tropcomp [-o outputFilePath] <folderPath> <threshold>");
     }
 }
