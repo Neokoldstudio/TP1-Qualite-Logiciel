@@ -1,4 +1,10 @@
 Chemin du fichier, Nom du paquet, Nom de la classe, tloc de la classe, tassert de la classe, tcmp de la classe = tloc / tassert
-../../jfreechart-master/src/test/java/org/jfree/chart/GanttChartTest.java, org.jfree.chart, GanttChartTest, 171, 4, 42.74893
-../../jfreechart-master/src/test/java/org/jfree/chart/internal/SerialUtilsTest.java, org.jfree.chart.internal, SerialUtilsTest, 72, 3, 23.9992
-../../jfreechart-master/src/test/java/org/jfree/chart/WaterfallChartTest.java, org.jfree.chart, WaterfallChartTest, 65, 3, 21.665945
+../../jfreechart-master/src/test/java/org/jfree/chart/XYLineChartTest.java, org.jfree.chart, XYLineChartTest, 82, 5, 16.4
+../../jfreechart-master/src/test/java/org/jfree/chart/plot/CombinedRangeXYPlotTest.java, org.jfree.chart.plot, CombinedRangeXYPlotTest, 156, 9, 17.333334
+../../jfreechart-master/src/test/java/org/jfree/chart/plot/CombinedRangeCategoryPlotTest.java, org.jfree.chart.plot, CombinedRangeCategoryPlotTest, 160, 8, 20.0
+../../jfreechart-master/src/test/java/org/jfree/chart/plot/CombinedDomainCategoryPlotTest.java, org.jfree.chart.plot, CombinedDomainCategoryPlotTest, 160, 9, 17.777779
+../../jfreechart-master/src/test/java/org/jfree/chart/XYBarChartTest.java, org.jfree.chart, XYBarChartTest, 85, 5, 17.0
+../../jfreechart-master/src/test/java/org/jfree/chart/XYStepChartTest.java, org.jfree.chart, XYStepChartTest, 91, 5, 18.2
+../../jfreechart-master/src/test/java/org/jfree/chart/ScatterPlotTest.java, org.jfree.chart, ScatterPlotTest, 82, 5, 16.4
+../../jfreechart-master/src/test/java/org/jfree/chart/TimeSeriesChartTest.java, org.jfree.chart, TimeSeriesChartTest, 82, 5, 16.4
+../../jfreechart-master/src/test/java/org/jfree/chart/LineChartTest.java, org.jfree.chart, LineChartTest, 87, 5, 17.4

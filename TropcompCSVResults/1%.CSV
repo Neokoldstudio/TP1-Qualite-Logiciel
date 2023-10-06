@@ -1,6 +1,0 @@
-Chemin du fichier, Nom du paquet, Nom de la classe, tloc de la classe, tassert de la classe, tcmp de la classe = tloc / tassert
-../../jfreechart-master/src/test/java/org/jfree/chart/renderer/xy/RendererXYPackageUtils.java, org.jfree.chart.renderer.xy, RendererXYPackageUtils, 31, 0, 310000.0
-../../jfreechart-master/src/test/java/org/jfree/chart/MeterChartTest.java, org.jfree.chart, MeterChartTest, 22, 0, 220000.0
-../../jfreechart-master/src/test/java/org/jfree/data/general/TestIntervalXYZDataset.java, org.jfree.data.general, TestIntervalXYZDataset, 87, 0, 870000.0
-../../jfreechart-master/src/test/java/org/jfree/data/general/IntervalDataItem.java, org.jfree.data.general, IntervalDataItem, 20, 0, 200000.0
-../../jfreechart-master/src/test/java/org/jfree/data/general/TestIntervalCategoryDataset.java, org.jfree.data.general, TestIntervalCategoryDataset, 191, 0, 1910000.0

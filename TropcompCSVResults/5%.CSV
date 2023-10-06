@@ -1,4 +1,0 @@
-Chemin du fichier, Nom du paquet, Nom de la classe, tloc de la classe, tassert de la classe, tcmp de la classe = tloc / tassert
-../../jfreechart-master/src/test/java/org/jfree/chart/GanttChartTest.java, org.jfree.chart, GanttChartTest, 171, 4, 42.74893
-../../jfreechart-master/src/test/java/org/jfree/chart/internal/SerialUtilsTest.java, org.jfree.chart.internal, SerialUtilsTest, 72, 3, 23.9992
-../../jfreechart-master/src/test/java/org/jfree/chart/WaterfallChartTest.java, org.jfree.chart, WaterfallChartTest, 65, 3, 21.665945
