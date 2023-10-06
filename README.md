@@ -9,6 +9,7 @@
 Ce projet représente le travail pratique 1 du cours de Qualité de Logiciel et Métriques. L'objectif principal est d'évaluer diverses métriques pour les suites de tests de logiciels Java utilisant la bibliothèque JUnit.
 
 ## Structure des programmes
+Le projet est composé de plusieurs programmes, chacun ayant sa propre fonctionnalité. Voici une brève description de chaque programme :
 
 ### Tloc
 
@@ -42,15 +43,6 @@ Pour exécuter tassert, il suffit d'utiliser le commande suivante:
 ```sh
 java -jar jars/tassert.jar <chemin de la classe de test Java>
 ```
-La réponse sera dans la ligne de commande. 
-
-Si vous souhaitez construire le projet vous-même, vous pouvez utiliser Maven:
-```sh
-cd tassert
-mvn package
-```
-Le fichier .jar résultant sera dans le dossier `./tassert/target/`
-
 ### Tls
 
 Le Tls prend en paramètre le chemin du dossier de test en entrée, ainsi qu'un paramètre optionnel correspondant au chemin du fichier CSV de sortie. Pour la sortie, il crée une ArrayList de chaînes de caractères et ajoute les noms des colonnes à la première ligne de cette liste. Ensuite, il appelle la méthode traverseFolder de la classe Scanner pour parcourir le dossier et remplir l'ArrayList avec les métriques relatives à chaque fichier. L'analyse du dossier d'entrée est effectuée de manière récursive, donc s'il y a d'autres sous-dossiers, la méthode traverseFolder est également appelée pour les explorer. Sinon, pour chaque fichier rencontré, la méthode extractInfo est appelée pour extraire des informations qui sont ajoutées à l'ArrayList de strings.
@@ -66,19 +58,6 @@ Enfin, le contenu de l'ArrayList est affiché dans la ligne de commande ou sauve
 java -jar jars/tls.jar -o <chemin du fichier CSV de sortie> <chemin du répertoire de test Java>
 ```
 
-Pour construire le projet, il faut d'abord installer les dépendences, c'est-à-dire les jars 'tloc' et 'tassert'.
-
-```sh
-cd tls/
-mvn install:install-file -Dfile=../jars/tloc.jar -DgroupId=ca.UdeM.Informatique -DartifactId=tloc -Dversion=0.1.0 -Dpackaging=jar
-mvn install:install-file -Dfile=../jars/tassert.jar -DgroupId=ca.UdeM.Informatique -DartifactId=tassert -Dversion=0.1.0 -Dpackaging=jar
-```
-Ensuite, la procedure est la même:
-```sh
-mvn package
-```
-Et le fichier résultant sera dans `target/`
-
 ### Tropcomp
 Pour le programme "tropcomp", nous avons choisi de ne pas utiliser de dépendances externes, et nous avons copié le code du programme "tls" directement dans "tropcomp". Par conséquent, ces deux programmes fonctionnent de manière indépendante. Les arguments d'entrée pour "tropcomp" sont les mêmes que ceux de "tls", et l'analyse des métriques pour les classes Java est effectuée à partir de la classe Analyser.
 
@@ -86,10 +65,40 @@ Pour le programme "tropcomp", nous avons choisi de ne pas utiliser de dépendanc
 ```sh
 java -jar jars/tropcomp.jar -o <chemin du fichier CSV de sortie> <chemin du répertoire de test Java>
 ```
-Si vous souhaitez construire le projet vous-même, vous pouvez utiliser Maven:
-```sh
-cd tropcomp
-mvn package
-```
-Le fichier .jar résultant sera dans le dossier `./tropcomp/target/`
+## Installation
+
+Si vous souhaitez construire les projets vous-même, vous pouvez utiliser Maven pour chaque programme. Voici comment procéder :
+
+1. **Tloc** :
+   ```sh
+   cd tloc
+   mvn package
+   ```
+
+2. **Tassert** :
+   ```sh
+   cd tassert
+   mvn package
+   ```
+
+3. **Tls** :
+   ```sh
+   cd tls
+   mvn install:install-file -Dfile=../jars/tloc.jar -DgroupId=ca.UdeM.Informatique -DartifactId=tloc -Dversion=0.1.0 -Dpackaging=jar
+   mvn install:install-file -Dfile=../jars/tassert.jar -DgroupId=ca.UdeM.Informatique -DartifactId=tassert -Dversion=0.1.0 -Dpackaging=jar
+   mvn package
+   ```
+
+4. **Tropcomp** :
+   ```sh
+   cd tropcomp
+   mvn package
+   ```
+
+Les fichiers .jar résultants seront respectivement dans les dossiers `target/`.
+
+## Remarques
+
+- Assurez-vous d'installer les dépendances nécessaires, notamment les fichiers JAR pour Tloc et Tassert, avant de construire les projets Tls et Tropcomp.
+- N'oubliez pas de spécifier le chemin du répertoire ou du fichier Java à analyser en tant qu'argument lors de l'exécution des programmes.
 
