@@ -27,8 +27,7 @@ public class Extractor {
         // Extract package and class name from the file path
         String[] pathSegments = filePath.split(File.separator + "src" + File.separator + "test" + File.separator + "java" + File.separator);
 
-
-        String[] packageAndClass = pathSegments[1].split("/");
+        String[] packageAndClass = pathSegments[1].split(File.separator);
 
         List<String> filteredList = new ArrayList<>();
 
