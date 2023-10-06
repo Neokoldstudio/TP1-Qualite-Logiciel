@@ -1,0 +1,8 @@
+Chemin du fichier, Nom du paquet, Nom de la classe, tloc de la classe, tassert de la classe, tcmp de la classe = tloc / tassert
+../../jfreechart-master/src/test/java/org/jfree/chart/StackedBarChartTest.java, org.jfree.chart, StackedBarChartTest, 90, 6, 14.99975
+../../jfreechart-master/src/test/java/org/jfree/chart/plot/CombinedRangeXYPlotTest.java, org.jfree.chart.plot, CombinedRangeXYPlotTest, 156, 9, 17.333141
+../../jfreechart-master/src/test/java/org/jfree/chart/plot/CombinedDomainXYPlotTest.java, org.jfree.chart.plot, CombinedDomainXYPlotTest, 162, 10, 16.199839
+../../jfreechart-master/src/test/java/org/jfree/chart/plot/CombinedRangeCategoryPlotTest.java, org.jfree.chart.plot, CombinedRangeCategoryPlotTest, 160, 8, 19.99975
+../../jfreechart-master/src/test/java/org/jfree/chart/plot/CombinedDomainCategoryPlotTest.java, org.jfree.chart.plot, CombinedDomainCategoryPlotTest, 160, 9, 17.77758
+../../jfreechart-master/src/test/java/org/jfree/chart/AreaChartTest.java, org.jfree.chart, AreaChartTest, 94, 6, 15.666406
+../../jfreechart-master/src/test/java/org/jfree/chart/BarChartTest.java, org.jfree.chart, BarChartTest, 91, 6, 15.166414

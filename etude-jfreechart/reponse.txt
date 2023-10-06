@@ -1,0 +1,2 @@
+a partir des resultats obtenus on peut deduire que tropcomp qualifiera de 'trop complexe'
+toutes les classes ayant un nombre important de lignes de code et peu d'assertions JUNIT.
