@@ -90,6 +90,6 @@ Les fichiers .jar résultants seront respectivement dans les dossiers `target/`.
 
 ## Remarques
 
-- Assurez-vous d'installer les dépendances nécessaires, notamment les fichiers JAR pour Tloc et Tassert, avant de construire les projets Tls et Tropcomp.
+- Assurez-vous d'installer les dépendances nécessaires, notamment les fichiers JAR pour Tloc et Tassert, avant de construire le projets Tls.
 - N'oubliez pas de spécifier le chemin du répertoire ou du fichier Java à analyser en tant qu'argument lors de l'exécution des programmes.
 
