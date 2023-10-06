@@ -1,2 +1,16 @@
-a partir des resultats obtenus on peut deduire que tropcomp qualifiera de 'trop complexe'
+a partir des résultats obtenus on peut déduire que tropcomp qualifiera de 'trop complexe'
 toutes les classes ayant un nombre important de lignes de code et peu d'assertions JUNIT.
+
+on pourrait interpréter cela comme la détection de tests trop complexes. En effet, un test unitaire
+contenant beaucoup de lignes de code pour peu d'assertion teste en théorie plus de choses par assertions
+qu'un test ayant un ratio plus équilibré, rendant la classe de test théoriquement plus complexe.
+
+mais il est tout de même important de souligner que le nombre de lignes présentes dans un test
+ne font pas sa complexité. Par exemple, une seule ligne pourrait faire appel à une méthode très complexe
+présente dans une autre classe. Ce genre de cas n'est pas pris en compte par la métrique tropcomp ce qui
+la rend moins pertinente (bien que tout de même utile).
+
+une amélioration serait de coupler cette métrique avec une analyse de la compexité de McCabe,
+on obtiendrais alors un outils d'estimation de complexité bien plus puissant.
+
+En conclusion, tropcomp est une métrique pratique mais qui pourrait encore être améliorée.
